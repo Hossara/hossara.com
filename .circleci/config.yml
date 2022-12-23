@@ -2,25 +2,24 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  deploy:
+    machine:
+      enabled: true
     steps:
-      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "d0:3b:34:14:24:a7:51:d2:68:74:3f:fa:34:e9:6c:b4"
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Deploy Over SSH
+          command: |
+            ssh $SSH_USER@$SSH_HOST "./deploy-hossara.sh"
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  version: 2
+  build-and-deploy:
     jobs:
-      - say-hello
+      - deploy:
+          filters:
+            branches:
+              only: deploy
