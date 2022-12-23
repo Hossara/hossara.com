@@ -1,0 +1,39 @@
+@import ../public/colors
+
+footer
+  padding: 30px
+  @media screen and (max-width: 900px)
+    padding: 14px 14px 14px 0
+    justify-content: space-between!important
+
+    > .navigation
+      display: flex!important
+
+  > .navigation
+    background-color: rgba(255, 255, 255, 0.2)
+    border-radius: 0 360px 360px 0
+    padding: 6px 16px 6px 0
+
+    > div
+      width: 3px
+      height: 12px
+      margin-right: 14px
+      background-color: $garnet_white
+      border-radius: 360px
+
+    > p
+      color: $garnet_white
+      font-size: 16px
+      font-weight: 500
+
+  > .icon_bar
+
+    > a
+      color: $garnet_white
+      font-size: 25px
+      margin: 0 10px
+      text-decoration: none
+      transition: 0.2s
+
+    > a:hover
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.74)

@@ -1,0 +1,31 @@
+*
+  font-family: Inter, Arial, sans-serif
+
+#particles
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -10
+
+.slide-up-enter-active,
+.slide-up-leave-active
+  transition: all 0.25s ease-out
+
+.slide-up-enter-from
+  opacity: 0
+  transform: translateY(30px)
+
+.slide-up-leave-to
+  opacity: 0
+  transform: translateY(-30px)
+
+main
+  position: fixed
+  width: 100%
+  height: 100%
+  overflow-y: auto!important
+
+  div[data-page]
+    flex-grow: 1

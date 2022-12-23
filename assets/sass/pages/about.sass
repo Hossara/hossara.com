@@ -1,0 +1,47 @@
+@import ../public/colors
+
+#about
+
+  > div
+    max-width: 710px
+    width: 100%
+
+    @media screen and (max-width: 740px)
+      padding: 0 20px
+
+    > p
+      text-shadow: 0 0 7px rgba(0, 0, 0, 0.3)
+      color: $v2_text
+      font-size: 24px
+      text-align: justify
+      line-height: 50px
+      width: 100%
+
+      @media screen and (max-width: 800px)
+        font-size: 20px
+
+      @media screen and (max-width: 540px)
+        font-size: 14px
+        line-height: 40px
+
+      > span
+        color: $v2_white
+        font-weight: 500
+
+    > div
+      margin-top: 30px
+
+      @media screen and (max-width: 540px)
+        flex-wrap: wrap
+        margin-top: 0
+
+      > button
+        width: 240px
+
+        @media screen and (max-width: 540px)
+          width: 100%
+          margin-right: 0!important
+          margin-top: 15px
+
+      > button:first-child
+        margin-right: 20px
