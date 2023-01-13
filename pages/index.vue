@@ -11,7 +11,7 @@ useHead({ title: "Hossein Araghi" })
   <div id="home" class="d-flex justify-content-center align-items-center" data-page>
     <div class="d-flex justify-content-between align-items-center flex-wrap">
       <div class="content">
-        <h1>Hey! I’m Hossein Araghi</h1>
+        <h1>Hi! I’m Hossein Araghi</h1>
         <h3>Software engineer</h3>
         <div class="d-flex align-items-center justify-content-start">
           <WhiteButton @click="$router.push('/about')">About Me</WhiteButton>
