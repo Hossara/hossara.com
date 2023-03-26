@@ -23,6 +23,9 @@ export default defineNuxtConfig({
             EMAIL: process.env.EMAIL,
             LINKED_IN: process.env.LINKEDIN,
             TELEGRAM: process.env.TELEGRAM,
+            INSTAGRAM: process.env.INSTAGRAM,
+            GITHUB: process.env.GITHUB,
+            REPO: process.env.REPO
         }
     }
 })
