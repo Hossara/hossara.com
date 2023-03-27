@@ -1,0 +1,1 @@
+export const isMenuOpen = () => useState("isMenuOpen", () => false)

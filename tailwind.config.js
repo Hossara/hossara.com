@@ -24,7 +24,8 @@ module.exports = {
           "hs-purple": "#646cff",
           "hs-purple-dark": "#535bf2",
           "hs-black": "#242424",
-          "hs-dark": "#414141"
+          "hs-dark": "#414141",
+          "menu_bg": "rgba(16, 17, 27, 0.8)"
         }
       }
     },

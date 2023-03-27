@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Service } from './interfaces'
+import {isMenuOpen} from "#imports"
 import frontend from "~/assets/img/banner/frontend.jpg"
 import backend from "~/assets/img/banner/backend.jpg"
 import devops from "~/assets/img/banner/devops.jpg"
@@ -14,6 +15,7 @@ const telegram = useState(() => `${config.public.TELEGRAM}`)
 const instagram = useState(() => `${config.public.INSTAGRAM}`)
 const github = useState(() => `${config.public.GITHUB}`)
 const repo = useState(() => `${config.public.REPO}`)
+const blog = useState(() => `${config.public.BLOG}`)
 const mailto = useState(() => `mailto:${config.public.EMAIL}`)
 
 const goto = (id: string) => document.getElementById(id)?.scrollIntoView({behavior: "smooth"}) 
@@ -54,6 +56,7 @@ const services: Ref<Service[]> = useState(() => [
 </script>
 
 <template>
+  <MobileMenu/>
   <div id="index" class="hidden mobile:block">
     <button class="fixed bottom-4 right-4 bg-hs-dark w-[50px] h-[50px] flex justify-center items-center rounded-full hover:bg-hs-purple shadow-md
           opacity-0 -z-30" :class="{ 'opacity-100 z-50': top }" @click="goto('home')">
@@ -65,6 +68,7 @@ const services: Ref<Service[]> = useState(() => [
       <NuxtLink @click="goto('home')" class="menu-item">Home</NuxtLink>
       <NuxtLink @click="goto('services')" class="menu-item">Services</NuxtLink>
       <NuxtLink @click="goto('contact')" class="menu-item">Contact me</NuxtLink>
+      <NuxtLink :to="blog" target="_blank" class="menu-item">Blog</NuxtLink>
     </header>
 
     <section id="home" class="h-[calc(100vh_-_76px)] flex items-center xl:max-w-[80%] lg:max-w-none w-full m-auto">
@@ -152,7 +156,7 @@ const services: Ref<Service[]> = useState(() => [
     <header class="p-6 flex justify-between items-center h-[70px]">
       <h1 class="text-[20px] font-bold">Hossein Araghi</h1>
 
-      <img src="./assets/img/menu.svg" alt="menu" class="w-[28px]">
+      <img src="./assets/img/menu.svg" alt="menu" class="w-[28px]" @click="isMenuOpen().value = true">
     </header>
   </div>
 </template>

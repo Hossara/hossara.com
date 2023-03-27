@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     css: [
         '@/assets/css/main.css',
+        "font-awesome/css/font-awesome.min.css"
     ],
     postcss: {
         plugins: {
@@ -25,7 +26,8 @@ export default defineNuxtConfig({
             TELEGRAM: process.env.TELEGRAM,
             INSTAGRAM: process.env.INSTAGRAM,
             GITHUB: process.env.GITHUB,
-            REPO: process.env.REPO
+            REPO: process.env.REPO,
+            BLOG: process.env.BLOG
         }
     }
 })
