@@ -175,8 +175,6 @@ const services: Ref<Service[]> = useState(() => [
         <p class="text-[24px] sm:text-[34px] font-medium">Hossein Araghi</p>
       </div>
 
-      
-
       <div class="flex flex-wrap mt-auto w-full p-4">
           <div class="flex w-full pb-4">
             <a :href="mailto + '?subject=Hiring%20Hossein%20Araghi'" class="w-full pr-2"><ButtonLink active small>Hire me</ButtonLink></a>
@@ -190,7 +188,7 @@ const services: Ref<Service[]> = useState(() => [
       </div>
     </section>
 
-    <section id="mobile_services" class="h-screen mt-20 w-[90%] mx-auto max-w-[450px]">
+    <section id="mobile_services" class="mt-20 w-[90%] mx-auto max-w-[420px]">
       <h1 class="p-2 title mobile">Services</h1>
 
       <div class="w-full flex flex-col">
@@ -200,6 +198,43 @@ const services: Ref<Service[]> = useState(() => [
 
         <SeeMore class=" p-2"/>
       </div>
+    </section>
+
+    <section id="mobile_contact" class="mt-20 w-[90%] mx-auto max-w-[420px]">
+      <h1 class="p-2 title mobile">Contact me</h1>
+
+      <div class="w-full flex flex-col p-2">
+          <div class="w-full flex flex-col">
+            <h2 class="title text-[20px] mb-2">Send me an message</h2>
+            <TextInput placeholder="Full name" type="text" class="w-full mb-4"/>
+            <TextInput placeholder="Email" type="email" class="w-full mb-4"/>
+            <SelectOption required class="mb-4">
+              <option>hiring</option>
+              <option>contribution</option>
+              <option>consultation</option>
+              <option>other</option>
+            </SelectOption>
+
+            <TextAreaInput placeholder="Message" required class="mb-5"/>
+
+            <ButtonLink small>Send message</ButtonLink>
+          </div>
+          <div class="w-full flex flex-col mt-10">
+            <h2 class="title text-[20px] mb-2">Contact me with social media</h2>
+            <SocialMedia title="Telegram" id="hossara_dev" :link="telegram" class="mb-4"/>
+            <SocialMedia title="Instagram" id="hossara.dev" :link="instagram" class="mb-4"/>
+            <SocialMedia title="Linkedin" id="hossara" :link="linked" class="mb-4"/>
+            <SocialMedia title="Github" id="Hossara" text="Checkout my GitHub account" :link="github"/>
+          </div>
+        </div>
+    </section>
+
+    <section class="h-[30vh] bg-black/60 rounded-[20px_20px_0_0] p-2 mt-10 flex justify-center items-center flex-col">
+      <h1 class="text-[20px] mb-4">Developed with <span class="text-pink-500">&hearts;</span> by Hossein Araghi</h1>
+
+      <a :href="repo" target="_blank" class="hover:text-blue-300 hover:border-blue-300 text-blue-100 hover:border-[1px] hover:p-2 rounded-lg">
+        Source code available in my github
+      </a>
     </section>
   </div>
 </template>
