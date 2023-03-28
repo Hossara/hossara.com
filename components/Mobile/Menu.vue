@@ -22,9 +22,9 @@ const mailto = useState(() => `mailto:${config.public.EMAIL}`)
     </div>
 
     <div class="body">
-      <MobileMenuItem to="home" title="Home"/>
-      <MobileMenuItem to="services" title="Services"/>
-      <MobileMenuItem to="contact" title="Contact me"/>
+      <MobileMenuItem to="mobile_home" title="Home"/>
+      <MobileMenuItem to="mobile_services" title="Services"/>
+      <MobileMenuItem to="mobile_contact" title="Contact me"/>
       <MobileMenuItem :to="blog" title="Blog" link/>
     </div>
 

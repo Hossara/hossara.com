@@ -152,11 +152,54 @@ const services: Ref<Service[]> = useState(() => [
     </section>
   </div>
 
-  <div id="index_mobile" class="mobile:hidden block">
-    <header class="p-6 flex justify-between items-center h-[70px]">
+  <div id="index_mobile" class="mobile:hidden flex flex-col">
+    <header class="p-6 flex justify-between items-center h-[70px]"
+      :class="{ 'fixed top-0 left-0 right-0 !h-[60px] z-40 bg-black/60' : top }">
       <h1 class="text-[20px] font-bold">Hossein Araghi</h1>
 
       <img src="./assets/img/menu.svg" alt="menu" class="w-[28px]" @click="isMenuOpen().value = true">
     </header>
+
+    <section id="mobile_home" class="h-[calc(92vh_-_70px)] flex flex-col items-center justify-center">
+      
+      <div class="relative max-h-[300px] max-w-[300px] aspect-square mx-auto h-full flex justify-center">
+          <div class="absolute left-[60px] right-[60px] top-[60px] z-0 bottom-[60px] rotate-45 bg-white aspect-square overflow-hidden rounded-[40px] shadow-[-10px_-10px_80px] shadow-hs-purple">
+            
+            <img src="./assets/img/h_full.png" class="aspect-square h-[250px]  object-contain rotate-[-45deg] absolute left-[8%] bottom-[-30%]" alt="Hossein Araghi">
+          </div>
+      </div>
+
+      <div class="flex flex-col mx-auto w-fit mt-5 text-center">
+        <p class="text-[32px] sm:text-[40px] font-medium">Hello, I'm a</p>
+        <p class="text-[32px] sm:text-[40px] font-bold">Full-stack developer</p>
+        <p class="text-[24px] sm:text-[34px] font-medium">Hossein Araghi</p>
+      </div>
+
+      
+
+      <div class="flex flex-wrap mt-auto w-full p-4">
+          <div class="flex w-full pb-4">
+            <a :href="mailto + '?subject=Hiring%20Hossein%20Araghi'" class="w-full pr-2"><ButtonLink active small>Hire me</ButtonLink></a>
+            <a :href="linked" class="w-full pl-2" target="_blank"><ButtonLink small class="w-full">Portfolio</ButtonLink></a>
+          </div>
+          <a :href="telegram" class="w-full">
+              <ButtonLink small>
+                <img src="./assets/img/telegram.svg" class="mr-[20px] w-[24px]" alt="telegram"> Get in touch by Telegram
+              </ButtonLink>
+          </a>
+      </div>
+    </section>
+
+    <section id="mobile_services" class="h-screen mt-20 w-[90%] mx-auto max-w-[450px]">
+      <h1 class="p-2 title mobile">Services</h1>
+
+      <div class="w-full flex flex-col">
+        <ServiceCard v-for="service in services" :key="service.title"
+            :title="service.title" :banner="service.image" :description="service.description" 
+            class="p-2"/>
+
+        <SeeMore class=" p-2"/>
+      </div>
+    </section>
   </div>
 </template>
