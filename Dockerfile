@@ -16,6 +16,8 @@ FROM node:16 AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ARG EMAIL APP_PASS
+ENV EMAIL=${EMAIL} APP_PASS=${APP_PASS}
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nuxtjs
