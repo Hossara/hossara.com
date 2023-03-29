@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
+    "emailjs": "^4.0.1",
     "font-awesome": "^4.7.0",
+    "nuxt-csurf": "^1.2.0",
+    "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   }
 }

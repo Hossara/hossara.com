@@ -53,6 +53,17 @@ const services: Ref<Service[]> = useState(() => [
     description: "Developing cross-platform mobile and desktop applications using flutter."
   }
 ])
+
+const sendMessage = () =>
+{
+  alert("This option is not available right now!")
+  // const { data, pending, error, refresh } = useCsrfFetch('/api/sendMessage', { 
+  //   query: {
+
+  //   },
+  //   method: 'POST'
+  // })
+}
 </script>
 
 <template>
@@ -117,10 +128,10 @@ const services: Ref<Service[]> = useState(() => [
         <h1 class="title mb-3">Contact me</h1>
 
         <div class="w-full flex">
-          <div class="w-1/2 pr-4">
+          <form class="w-1/2 pr-4" @submit.prevent="sendMessage">
             <h2 class="title text-[20px] mb-2">Send me an message</h2>
-            <TextInput placeholder="Full name" type="text" class="w-full mb-3"/>
-            <TextInput placeholder="Email" type="email" class="w-full mb-3"/>
+            <TextInput placeholder="Full name" type="text" class="w-full mb-3" required/>
+            <TextInput placeholder="Email" type="email" class="w-full mb-3" required/>
             <SelectOption required class="mb-3">
               <option>hiring</option>
               <option>contribution</option>
@@ -131,7 +142,7 @@ const services: Ref<Service[]> = useState(() => [
             <TextAreaInput placeholder="Message" required class="mb-4"/>
 
             <ButtonLink small>Send message</ButtonLink>
-          </div>
+          </form>
           <div class="w-1/2 pl-4">
             <h2 class="title text-[20px] mb-2">Contact me with social media</h2>
             <SocialMedia title="Telegram" id="hossara_dev" :link="telegram" class="mb-3"/>
@@ -204,10 +215,10 @@ const services: Ref<Service[]> = useState(() => [
       <h1 class="p-2 title mobile">Contact me</h1>
 
       <div class="w-full flex flex-col p-2">
-          <div class="w-full flex flex-col">
+          <form class="w-full flex flex-col" @submit.prevent="sendMessage">
             <h2 class="title text-[20px] mb-2">Send me an message</h2>
-            <TextInput placeholder="Full name" type="text" class="w-full mb-4"/>
-            <TextInput placeholder="Email" type="email" class="w-full mb-4"/>
+            <TextInput placeholder="Full name" type="text" class="w-full mb-4" required/>
+            <TextInput placeholder="Email" type="email" class="w-full mb-4" required/>
             <SelectOption required class="mb-4">
               <option>hiring</option>
               <option>contribution</option>
@@ -218,7 +229,7 @@ const services: Ref<Service[]> = useState(() => [
             <TextAreaInput placeholder="Message" required class="mb-5"/>
 
             <ButtonLink small>Send message</ButtonLink>
-          </div>
+          </form>
           <div class="w-full flex flex-col mt-10">
             <h2 class="title text-[20px] mb-2">Contact me with social media</h2>
             <SocialMedia title="Telegram" id="hossara_dev" :link="telegram" class="mb-4"/>
