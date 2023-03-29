@@ -16,7 +16,7 @@ My personal website `v3`
 - [Figma](https://www.figma.com/)
 
 ### Screenshots
-![Screenshot](./Screenshot.JPG)
+![Screenshot](./Screenshot.jpg)
 
 #### If you want to donate me, [buy me a coffee 😉](https://coffeebede.ir/hossara)
 
