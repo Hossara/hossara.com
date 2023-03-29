@@ -54,15 +54,52 @@ const services: Ref<Service[]> = useState(() => [
   }
 ])
 
-const sendMessage = () =>
-{
-  alert("This option is not available right now!")
-  // const { data, pending, error, refresh } = useCsrfFetch('/api/sendMessage', { 
-  //   query: {
+const fl_value = useState(() => "")
+const email_value = useState(() => "")
+const option_value = useState(() => "hiring")
+const message_value = useState(() => "")
 
-  //   },
-  //   method: 'POST'
-  // })
+const isSending = useState(() => false)
+
+const sendMessage = async () =>
+{
+  isSending.value = true
+
+  const loading = useNuxtApp().$showToast.loading("Sending message...")
+
+  const { data, error } = await useCsrfFetch('/api/sendMessage', { 
+    query: {
+      from: email_value.value,
+      fl: fl_value.value,
+      subject: option_value.value,
+      message: message_value.value
+    },
+    method: 'POST'
+  })
+
+  if(error.value)
+  {
+    console.log(error.value)
+    useNuxtApp().$showToast.update(loading, {
+      render: "Somthing went wrong!. Check console",
+      type: "error",
+      autoClose: true,
+      closeOnClick: true,
+      isLoading: false
+    })
+  }
+  else if(data.value?.code == 200)
+  { 
+    useNuxtApp().$showToast.update(loading, {
+      render: "Message sent successfully!",
+      type: "success",
+      autoClose: true,
+      closeOnClick: true,
+      isLoading: false
+    })
+  }
+
+  isSending.value = false
 }
 </script>
 
@@ -130,18 +167,18 @@ const sendMessage = () =>
         <div class="w-full flex">
           <form class="w-1/2 pr-4" @submit.prevent="sendMessage">
             <h2 class="title text-[20px] mb-2">Send me an message</h2>
-            <TextInput placeholder="Full name" type="text" class="w-full mb-3" required/>
-            <TextInput placeholder="Email" type="email" class="w-full mb-3" required/>
-            <SelectOption required class="mb-3">
+            <TextInput placeholder="Full name" type="text" class="w-full mb-3" required v-model:value="fl_value"/>
+            <TextInput placeholder="Email" type="email" class="w-full mb-3" required v-model:value="email_value"/>
+            <SelectOption required class="mb-3" v-model:value="option_value">
               <option>hiring</option>
               <option>contribution</option>
               <option>consultation</option>
               <option>other</option>
             </SelectOption>
 
-            <TextAreaInput placeholder="Message" required class="mb-4"/>
+            <TextAreaInput placeholder="Message" required class="mb-4" v-model:value="message_value"/>
 
-            <ButtonLink small>Send message</ButtonLink>
+            <ButtonLink small :disabled="isSending">{{ isSending ? 'Sending...' : 'Send message' }}</ButtonLink>
           </form>
           <div class="w-1/2 pl-4">
             <h2 class="title text-[20px] mb-2">Contact me with social media</h2>
@@ -217,18 +254,18 @@ const sendMessage = () =>
       <div class="w-full flex flex-col p-2">
           <form class="w-full flex flex-col" @submit.prevent="sendMessage">
             <h2 class="title text-[20px] mb-2">Send me an message</h2>
-            <TextInput placeholder="Full name" type="text" class="w-full mb-4" required/>
-            <TextInput placeholder="Email" type="email" class="w-full mb-4" required/>
-            <SelectOption required class="mb-4">
+            <TextInput placeholder="Full name" type="text" class="w-full mb-4" required v-model:value="fl_value"/>
+            <TextInput placeholder="Email" type="email" class="w-full mb-4" required v-model:value="email_value"/>
+            <SelectOption required class="mb-4" v-model:value="option_value">
               <option>hiring</option>
               <option>contribution</option>
               <option>consultation</option>
               <option>other</option>
             </SelectOption>
 
-            <TextAreaInput placeholder="Message" required class="mb-5"/>
+            <TextAreaInput placeholder="Message" required class="mb-5" v-model:value="message_value"/>
 
-            <ButtonLink small>Send message</ButtonLink>
+            <ButtonLink small :disabled="isSending">{{ isSending ? 'Sending...' : 'Send message' }}</ButtonLink>
           </form>
           <div class="w-full flex flex-col mt-10">
             <h2 class="title text-[20px] mb-2">Contact me with social media</h2>
@@ -249,3 +286,7 @@ const sendMessage = () =>
     </section>
   </div>
 </template>
+
+<style lang="sass">
+@import "vue3-toastify/dist/index.css"
+</style>

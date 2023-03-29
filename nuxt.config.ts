@@ -41,5 +41,5 @@ export default defineNuxtConfig({
       },
       methodsToProtect: ['POST', 'PUT', 'PATCH'], 
       encryptAlgorithm: 'aes-256-cbc'
-    }
+    },
 })

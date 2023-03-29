@@ -7,7 +7,7 @@ export default defineEventHandler((event) =>
 
   const query = getQuery(event)
 
-  if(validate(query.to) && validate(query.subject) && validate(query.fl) && validate(query.message))
+  if(validate(query.from) && validate(query.subject) && validate(query.fl) && validate(query.message))
   {
     const email = process.env.EMAIL!.toString()
     const pass = process.env.APP_PASS
@@ -22,8 +22,8 @@ export default defineEventHandler((event) =>
     client.send({
       text: query.message!!.toString(),
       from: email,
-      to: query.to!!.toString(),
-      subject: `Email from ${query.fl} - ${query.subject}`
+      to: email,
+      subject: `Email from ${query.fl} - ${query.subject} - ${query.from}`
     }, (err, message) => {
       console.log(err || message)
       throw createError({
@@ -31,6 +31,11 @@ export default defineEventHandler((event) =>
         statusMessage: 'Something went wrong!',
       })
     })
+
+    return {
+      status: "success",
+      code: 200
+    }
   }
   else throw createError({
     statusCode: 400,
