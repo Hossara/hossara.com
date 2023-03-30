@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// Imports
 import { Service } from './interfaces'
 import {isMenuOpen} from "#imports"
 import frontend from "~/assets/img/banner/frontend.jpg"
@@ -6,8 +7,35 @@ import backend from "~/assets/img/banner/backend.jpg"
 import devops from "~/assets/img/banner/devops.jpg"
 import mobile from "~/assets/img/banner/mobile.jpg"
 
-useHead({ title: "Hossein Araghi" })
+// Meta Tags
+useServerSeoMeta({
+  title: 'Hossein Araghi',
+  ogTitle: 'Hossein Araghi website',
+  description: 'Hossein Araghi a Full-stack developer. Interested in computer science, photography, music, astrology.',
+  ogDescription: 'Hossein Araghi a Full-stack developer. Interested in computer science, photography, music, astrology.',
+  ogImage: 'https://hossara.com/favicon.ico',
+  twitterCard: 'summary_large_image',
+})
 
+useSchemaOrg([
+  definePerson({
+    name: 'Hossein Araghi',
+    image: "https://hossara.com/favicon.ico",
+    sameAs: [
+      'https://github.com/Hossara',
+      'https://www.linkedin.com/in/hossara/',
+      'https://instagram.com/hossara.dev'
+    ]
+  }),
+  defineWebSite({
+    name: "Hossein Araghi website",
+    description: 'Hossein Araghi a Full-stack developer. Interested in computer science, photography, music, astrology.',
+    url: "https://hossara.com"
+  }),
+  defineWebPage(),
+])
+
+// Webpage
 const config = useRuntimeConfig()
 
 const linked = useState(() => `${config.public.LINKED_IN}`)

@@ -1,8 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ["nuxt-csurf"],
+    modules: [
+        "nuxt-csurf",
+        "nuxt-schema-org",
+        "nuxt-simple-sitemap",
+        "@nuxtjs/robots"
+    ],
     css: [
-        '@/assets/css/main.css',
+        "@/assets/css/main.css",
         "font-awesome/css/font-awesome.min.css"
     ],
     postcss: {
@@ -12,7 +17,7 @@ export default defineNuxtConfig({
         }
     },
     buildModules: [
-        '@nuxtjs/google-fonts' 
+        "@nuxtjs/google-fonts"
     ],
     googleFonts: {
         inject: true,
@@ -32,14 +37,20 @@ export default defineNuxtConfig({
         }
     },
     csurf: { 
-      https: false, // default true if in production
-      cookieKey: '', // "__Host-csrf" if https is true otherwise just "csrf"
-      cookie: {
-        path: '/',
-        httpOnly: true,
-        sameSite: 'strict'
-      },
-      methodsToProtect: ['POST', 'PUT', 'PATCH'], 
-      encryptAlgorithm: 'aes-256-cbc'
+        https: false,
+        cookieKey: "",
+        cookie: {
+            path: "/",
+            httpOnly: true,
+            sameSite: "strict"
+        },
+        methodsToProtect: ["POST", "PUT", "PATCH"], 
+        encryptAlgorithm: "aes-256-cbc"
     },
+    schemaOrg: {
+        host: "https://hossara.com"
+    },
+    sitemap: {
+        siteUrl: "https://hossara.com"
+    }
 })
