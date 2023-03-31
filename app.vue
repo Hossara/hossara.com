@@ -233,7 +233,7 @@ const sendMessage = async () =>
       <h1 class="text-[40px] mb-2">Developed with <span class="text-pink-500">&hearts;</span> by Hossein Araghi</h1>
 
       <a :href="repo" target="_blank" class="hover:text-blue-300 hover:border-blue-300 text-blue-100 hover:border-[1px] hover:p-2 rounded-lg">
-        Source code available in my github
+        Source code {{ config.public.version }} available in my github
       </a>
     </section>
   </div>
@@ -319,7 +319,7 @@ const sendMessage = async () =>
       <h1 class="text-[20px] mb-4">Developed with <span class="text-pink-500">&hearts;</span> by Hossein Araghi</h1>
 
       <a :href="repo" target="_blank" class="hover:text-blue-300 hover:border-blue-300 text-blue-100 hover:border-[1px] hover:p-2 rounded-lg">
-        Source code available in my github
+        Source code {{ config.public.version }} available in my github
       </a>
     </section>
   </div>

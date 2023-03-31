@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import pkg from './package.json'
+
 export default defineNuxtConfig({
     modules: [
         "nuxt-csurf",
@@ -33,7 +34,8 @@ export default defineNuxtConfig({
             INSTAGRAM: process.env.INSTAGRAM,
             GITHUB: process.env.GITHUB,
             REPO: process.env.REPO,
-            BLOG: process.env.BLOG
+            BLOG: process.env.BLOG,
+            version: pkg.version
         }
     },
     csurf: { 
