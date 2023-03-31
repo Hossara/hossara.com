@@ -8,6 +8,16 @@ import devops from "~/assets/img/banner/devops.jpg"
 import mobile from "~/assets/img/banner/mobile.jpg"
 
 // Meta Tags
+useHead({
+  meta: [
+    {
+      name: "keywords", 
+      content: "Hossein Araghi, حسین عراقی, Developer, Full-satck developer, programmer, web, nuxt, برنامه نویس, توسعه دهنده, web developer, توسعه دهنده وب" +
+      "CS50, CS50x Iran"
+    }
+  ]
+})
+
 useServerSeoMeta({
   title: 'Hossein Araghi',
   ogTitle: 'Hossein Araghi website',
