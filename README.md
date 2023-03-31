@@ -1,8 +1,8 @@
 # hossara.com
-My personal website `v3.5`
+My personal website `v3.5.1`
 
-![Status](https://img.shields.io/badge/Status-release-green)
-![Version](https://img.shields.io/badge/Version-v3.5-blue)
+![Status](https://img.shields.io/badge/Status-development-orange)
+![Version](https://img.shields.io/badge/Version-v3.5.1-blue)
 
 ### Language and frameworks
 - [Nuxt.js 3](https://nuxt.com/)

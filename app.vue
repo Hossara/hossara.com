@@ -249,7 +249,7 @@ const sendMessage = async () =>
     <section id="mobile_home" class="h-[calc(92vh_-_70px)] flex flex-col items-center justify-center">
       
       <div class="relative max-h-[300px] max-w-[300px] aspect-square mx-auto h-full flex justify-center ">
-          <div class="absolute inset-[10%] rotate-45 bg-white aspect-square overflow-hidden rounded-[40px] shadow-[-10px_-10px_80px] shadow-hs-purple">
+          <div class="absolute inset-[15%] rotate-45 bg-white aspect-square overflow-hidden rounded-[40px] shadow-[-10px_-10px_80px] shadow-hs-purple">
 
             <img src="./assets/img/h_full.png" class="h-full aspect-square object-contain absolute -rotate-45 bottom-[-25px] left-[28px]" alt="Hossein Araghi">
           </div>
