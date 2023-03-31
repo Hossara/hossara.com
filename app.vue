@@ -150,7 +150,7 @@ const sendMessage = async () =>
     <section id="home" class="h-[calc(100vh_-_76px)] flex items-center xl:max-w-[80%] lg:max-w-none w-full m-auto">
       <div class="h-[40%] w-full flex justify-center items-center">
         <div class="h-full flex bg-white aspect-square rounded-[40px] rotate-45 relative items-center overflow-hidden shadow-[-40px_-40px_140px] shadow-hs-purple">
-          <img src="./assets/img/h_full.png" class="rotate-[-45deg] absolute left-[-5px]" alt="Hossein Araghi">
+          <img src="./assets/img/h_full.png" class="h-full aspect-square object-contain absolute -rotate-45 bottom-[-40px] left-[44px]" alt="Hossein Araghi">
         </div>
       </div>
       <div class="w-full flex justify-center items-center pb-4">
@@ -238,20 +238,20 @@ const sendMessage = async () =>
 
     <section id="mobile_home" class="h-[calc(92vh_-_70px)] flex flex-col items-center justify-center">
       
-      <div class="relative max-h-[300px] max-w-[300px] aspect-square mx-auto h-full flex justify-center">
-          <div class="absolute left-[60px] right-[60px] top-[60px] z-0 bottom-[60px] rotate-45 bg-white aspect-square overflow-hidden rounded-[40px] shadow-[-10px_-10px_80px] shadow-hs-purple">
-            
-            <img src="./assets/img/h_full.png" class="aspect-square h-[250px]  object-contain rotate-[-45deg] absolute left-[8%] bottom-[-30%]" alt="Hossein Araghi">
+      <div class="relative max-h-[300px] max-w-[300px] aspect-square mx-auto h-full flex justify-center ">
+          <div class="absolute inset-[10%] rotate-45 bg-white aspect-square overflow-hidden rounded-[40px] shadow-[-10px_-10px_80px] shadow-hs-purple">
+
+            <img src="./assets/img/h_full.png" class="h-full aspect-square object-contain absolute -rotate-45 bottom-[-25px] left-[28px]" alt="Hossein Araghi">
           </div>
       </div>
 
       <div class="flex flex-col mx-auto w-fit mt-5 text-center">
-        <p class="text-[32px] sm:text-[40px] font-medium">Hello, I'm a</p>
-        <p class="text-[32px] sm:text-[40px] font-bold">Full-stack developer</p>
-        <p class="text-[24px] sm:text-[34px] font-medium">Hossein Araghi</p>
+        <p class="text-[32px] font-medium">Hello, I'm a</p>
+        <p class="text-[32px] font-bold">Full-stack developer</p>
+        <p class="text-[24px] font-medium">Hossein Araghi</p>
       </div>
 
-      <div class="flex flex-wrap mt-auto w-full p-4">
+      <div class="flex flex-wrap mt-auto w-full p-4 max-w-[420px]">
           <div class="flex w-full pb-4">
             <a :href="mailto + '?subject=Hiring%20Hossein%20Araghi'" class="w-full pr-2"><ButtonLink active small>Hire me</ButtonLink></a>
             <a :href="linked" class="w-full pl-2" target="_blank"><ButtonLink small class="w-full">Portfolio</ButtonLink></a>
